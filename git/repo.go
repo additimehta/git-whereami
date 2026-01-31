@@ -23,6 +23,14 @@ func CurrentBranch() (string, error) {
 func MergeBase(base string) (string, error) {
 	return runGit("merge-base", base, "HEAD")
 }
+func DefaultBranch() (string, error) {
+	out, err := runGit("symbolic-ref", "refs/remotes/origin/HEAD")
+	if err != nil {
+		return "", err
+	}
+	parts := strings.Split(out, "/")
+	return parts[len(parts)-1], nil
+}
 
 func AheadBehind(base string) (ahead, behind string, err error) {
 	out, err := runGit("rev-list", "--left-right", "--count", base+"...HEAD")
