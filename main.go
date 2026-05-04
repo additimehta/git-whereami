@@ -37,6 +37,7 @@ func main() {
 	fmt.Printf("Ahead         : %s\n", ahead)
 	fmt.Printf("Behind        : %s\n", behind)
 	graph, err := git.Graph(base)
+
 if err == nil && graph != "" {
 	fmt.Println("\nYou are here:")
 	fmt.Println(graph)
