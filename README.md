@@ -1,4 +1,4 @@
-> Work in progress
+
 # git-whereami
 
 A CLI tool written in Go that tells you **where you are in your Git project**.
