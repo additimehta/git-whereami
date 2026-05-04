@@ -6,6 +6,18 @@ import (
 	"strings"
 )
 
+
+func Graph(base string) (string, error) {
+	return runGit(
+		"log",
+		"--oneline",
+		"--graph",
+		"--decorate",
+		base+"..HEAD",
+	)
+}
+
+
 func runGit(args ...string) (string, error) {
 	cmd := exec.Command("git", args...)
 	var out bytes.Buffer
