@@ -10,7 +10,7 @@ It shows:
 - a visual commit graph of your work
 
 ---
-to install put `brew install git-whereami'
+to install put `brew install git-whereami`
 ## Example
 
 ```bash
