@@ -23,16 +23,23 @@ $ git-whereami
 
 Base branch   : main
 Current branch: feature-login
-Ahead         : 3
+Ahead         : 6
 Behind        : 2
 
 You are here:
 * 9f3a2c1 (HEAD -> feature-login) Fix login bug
-* 7ab12d4 Add validation
+*   8e4b1c2 Merge feature-validation into feature-login
+|\
+| * 7ab12d4 Add input validation
+| * 6b4d921 Add validation tests
+* | 5c1e203 Create login endpoint
+|/
 * 2c1e4f0 Create login form
 ```
 
-The graph uses Git's `log --graph --oneline --decorate` output. **Currently it shows only commits reachable from your branch but not from the base branch**, not the full history of every branch. The ahead/behind counts can therefore include commits that aren't drawn in this graph.
+In this example, the feature branch has six commits that aren't on `main`, including a merge commit. The `*`, `|`, `/`, and `\` characters show how those commits connect.
+
+The graph comes from Git's `log --graph --oneline --decorate` command. Currently, `git-whereami` only draws commits reachable from your current branch but not from the base branch. It does **not** draw the two commits you're behind on `main`.
 
 ## What I'd like to improve
 
